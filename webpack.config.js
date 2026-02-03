@@ -1,0 +1,53 @@
+
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
+const styleRule = {
+    test: /\.css$/,
+    use: ['style-loader', 'css-loader'],
+}
+
+const jsRule = {
+    test: /\.(?:js|mjs|cjs)$/,
+    exclude: /node_modules/,
+    use: {
+        loader: 'babel-loader',
+        options: {
+            sourceType: 'module',
+            targets: 'defaults',
+            presets: [['@babel/preset-env']]
+        }
+    }
+}
+
+const rules = [styleRule, jsRule];
+
+module.exports = {
+    mode: 'development',
+    entry: './src/index.js',
+    output: {
+        filename: 'main.js',
+        path: path.resolve(__dirname, 'dist'),
+        clean: true,
+    },
+    module: {
+        rules: rules
+    },
+    resolve: {
+        extensions: ['.js', '.css'],
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: './src/index.html',
+            filename: 'index.html',
+        }),
+    ],
+    devServer: {
+        static: {
+            directory: path.resolve(__dirname, 'dist'),
+        },
+        port: 8080,
+        open: true,
+        hot: true,
+    },
+}
