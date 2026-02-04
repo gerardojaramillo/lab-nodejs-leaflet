@@ -1,5 +1,24 @@
+/**
+ * @author
+ *   Gerardo Jaramillo (https://gerardojaramillo.dev)
+ *
+ * styles.css
+ */
+
+* {
+outline: none;
+}
+
 body {
 margin: 0;
 padding: 0;
-background-color: blueviolet;
+background-color: #fff;
+}
+
+#map {
+background-color: #fafafa;
+border-radius: 8px;
+width: 400px;
+height: 560px;
+position: relative;
 }

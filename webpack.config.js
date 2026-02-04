@@ -1,6 +1,7 @@
 
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpachPlugin = require('copy-webpack-plugin');
 
 const styleRule = {
     test: /\.css$/,
@@ -41,6 +42,14 @@ module.exports = {
             template: './src/index.html',
             filename: 'index.html',
         }),
+        new CopyWebpachPlugin({
+            patterns: [
+                {
+                    from: path.resolve(__dirname, 'src/geo/geo.geojson'),
+                    to: 'geo.geojson'
+                }
+            ]
+        })
     ],
     devServer: {
         static: {
