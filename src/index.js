@@ -39,6 +39,14 @@ const opts = {
 
 const map = L.map('map', opts);
 
+const title = L.control();
+title.onAdd = function (map) {
+    const div = L.DomUtil.create('div', 'info-title');
+    div.innerHTML = '<h4>Ciudad de México</h4>';
+    return div;
+}
+title.addTo(map);
+
 const style = {
     color: '#fff',
     fillColor: '#ffc107',
