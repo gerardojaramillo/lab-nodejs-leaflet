@@ -49,7 +49,7 @@ title.addTo(map);
 
 const style = {
     color: '#fff',
-    fillColor: '#ffc107',
+    fillColor: '#b39ddb',
     fillOpacity: 1.0,
     weight: 1.2,
     interactive: true,
@@ -60,7 +60,9 @@ const geoLayer = L.geoJSON(result, {
     onEachFeature: (feature, layer) => {
         layer.bindPopup(`ID: ${feature.id}`)
             .on('mousemove', e => {
-                log('mouse moving...')
+                e.target.setStyle({ weight: 1, fillColor: '#ccd1d9' })
+            }).on('mouseout', e => {
+                geoLayer.resetStyle(e.target);
             })
             .on('click', e => {
                 log(feature.properties);

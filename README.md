@@ -3,7 +3,7 @@
 ## GitHub
 
 ```
-git clone git@github.com:gerardojaramillo/lab-nodejs-leaflet.git
+git clone https://github.com/gerardojaramillo/lab-nodejs-leaflet.git
 ```
 Cool, you have a copy !
 
@@ -30,3 +30,5 @@ docker compose down (shut it down)
 after a few seconds the image is created, open browser and type http://localhost:8080/
 
 Ualá ! a basic geojson map ! but with a lot of potential.
+
+![Alt text](screenshot/lab-nodejs-leaflet.png)

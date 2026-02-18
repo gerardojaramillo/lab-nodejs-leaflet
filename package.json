@@ -6,8 +6,8 @@
   "author": "Gerardo Jaramillo",
   "main": "main.js",
   "scripts": {
-    "start": "webpack serve --open",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production",
+    "start": "webpack serve --open"
   },
   "devDependencies": {
     "@babel/core": "^7.29.0",

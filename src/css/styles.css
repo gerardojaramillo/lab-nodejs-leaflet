@@ -16,9 +16,10 @@ background-color: #fff;
 }
 
 #map {
-background-color: #fafafa;
+background-color: transparent;
 border-radius: 8px;
 width: 400px;
 height: 560px;
 position: relative;
+margin: 128px auto;
 }
